@@ -126,28 +126,28 @@ jobs:
           
           MSG="🎉 *New Morphe Build Available!*
 
-           *YouTube:* \`${YOUTUBE_VER}\`
-           *Music:* \`${MUSIC_VER}\`
+          *YouTube:* \`${YOUTUBE_VER}\`
+          *Music:* \`${MUSIC_VER}\`
 
-           *Build Info:*
+          *Build Info:*
           • CLI: \`v${CLI_VER}\`
           • Patches: \`v${PATCHES_VER}\`
           • Build: \`#${BUILD_NUM}\`
 
-           *What's Included:*
+          *What's Included:*
           • Root modules (Magisk/KernelSU)
           • Non-root APKs (requires MicroG)
 
-           *Installation:*
+          *Installation:*
           • Root: Flash module via Magisk/KernelSU
           • Non-root: Install APK + [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases)
 
-           *Links:*
+          *Links:*
           • [Full Changelog](${RELEASE_URL})
           • [Star Repository](https://github.com/${GITHUB_REPOSITORY})
           • [Builder Source](https://github.com/elohim-etz/morphe-builder)
 
-          _Built with  by_ [𝙴𝙻𝙾𝙷𝙸𝙼](https://t.me/elohim152)"
+          _Built with ❤️ by_ [𝙴𝙻𝙾𝙷𝙸𝙼](https://t.me/elohim152)"
           
           cd build
           declare -A YT_MODULES YT_APKS MUSIC_MODULES MUSIC_APKS
