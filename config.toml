@@ -2,7 +2,7 @@ enable-module-update = true
 parallel-jobs = 1
 rv-brand = "Morphe"
 patches-version = "dev"
-cli-version = "latest"
+cli-version = "newest"
 
 # add 'enabled = false' for not patching a specific app or remove it from the config
 # see https://github.com/elohim-etz/morphe-builder/blob/main/CONFIG.md for more detailed explanations

@@ -74,7 +74,12 @@ get_prebuilts() {
 		if [ "$ver" = "dev" ]; then
 			local resp
 			resp=$(gh_req "$rv_rel" -) || return 1
-			ver=$(jq -e -r '.[] | .tag_name' <<<"$resp" | get_highest_ver) || return 1
+			ver=$(jq -e -r '.[0].tag_name' <<<"$resp") || return 1
+		elif [ "$ver" = "newest" ]; then
+			local resp all_releases
+			resp=$(gh_req "$rv_rel" -) || return 1
+			all_releases=$(jq 'sort_by(.created_at) | reverse' <<<"$resp")
+			ver=$(jq -e -r '.[0].tag_name' <<<"$all_releases") || return 1
 		fi
 		if [ "$ver" = "latest" ]; then
 			rv_rel+="/latest"
@@ -169,6 +174,10 @@ config_update() {
 			local rv_rel="https://api.github.com/repos/${PATCHES_SRC}/releases"
 			if [ "$PATCHES_VER" = "dev" ]; then
 				last_patches=$(gh_req "$rv_rel" - | jq -e -r '.[0]')
+			elif [ "$PATCHES_VER" = "newest" ]; then
+				local all_releases
+				all_releases=$(gh_req "$rv_rel" - | jq 'sort_by(.created_at) | reverse')
+				last_patches=$(jq -e -r '.[0]' <<<"$all_releases")
 			elif [ "$PATCHES_VER" = "latest" ]; then
 				last_patches=$(gh_req "$rv_rel/latest" -)
 			else
