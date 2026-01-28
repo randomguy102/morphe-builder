@@ -1,6 +1,6 @@
 {
-  "version": "v20.40.45 (patches dev.3.mpp)",
-  "versionCode": 28,
-  "zipUrl": "https://github.com/randomguy102/morphe-builder/releases/download/28/youtube-morphe-module-v20.40.45-all.zip",
+  "version": "v20.40.45 (patches dev.6.mpp)",
+  "versionCode": 29,
+  "zipUrl": "https://github.com/randomguy102/morphe-builder/releases/download/29/youtube-morphe-module-v20.40.45-all.zip",
   "changelog": "https://raw.githubusercontent.com/randomguy102/morphe-builder/update/build.md"
 }
